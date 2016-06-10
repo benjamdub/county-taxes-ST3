@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= json.project.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <%= t.include("partials/_head.html") %>
+  </head>
+  <body>
+
+    <responsive-child>
+      <main class="interactive">
+        <div>
+          <h1>How ST3 taxes would be divvied up and spent</h3>
+            <p>Sound Transit collects money in five geographic areas. This map shows projected tax collections for each area and spending, should voters approve the fall ballot measure.</p>
+          </div>
+          <h2>Money to be collected and spent for ST3, for 2017-2041 (billions)
+          <div class="row">
+            <div class="cell graph">
+              <img src="./assets/barscountytaxesST3.PNG" >
+            </div>
+            <div class="cell map">
+              <img src="./assets/mapcountytaxesST3.PNG" >
+            </div>
+          </div>
+          <div class="credit">
+            <p><em>*Sales, property and car-tab taxes</em></p>
+            <p><em>**All sources include bond proceeds, federal grants and fares.</em></p>
+            <p><em>Graphics: Kelly Shea</em></p>
+          </div>
+      </main>
+    </responsive-child>
+
+    <script src="app.js" async></script>
+    <% if (json.project.production) { %>
+    <%= !json.project.embedded ? t.include("partials/_foot.html") : "" %>
+    <%= t.include("partials/_workHere.html") %>
+    <% } %>
+  </body>
+</html>
